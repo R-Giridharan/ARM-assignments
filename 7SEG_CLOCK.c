@@ -27,25 +27,29 @@ void fourdigdisp(U32 m, U32 s)
 {	 char i;
 for(i=0;i<50;i++)
 {
-   IOCLR0=SEG_D|SEG1|SEG2|SEG3|SEG4;
+   IOCLR0=SEG_D;
    IOSET0=seg_lut[m/10];
+   IOCLR0=SEG1;
+   delay_ms(5);
    IOSET0=SEG1;
-   delay_ms(5);
 
-   IOCLR0=SEG_D|SEG1|SEG2|SEG3|SEG4;
+   IOCLR0=SEG_D;
    IOSET0=seg_lut[m%10]^0x80;
+   IOCLR0=SEG2;
+   delay_ms(5);
    IOSET0=SEG2;
-   delay_ms(5);
 
-   IOCLR0=SEG_D|SEG1|SEG2|SEG3|SEG4;
+   IOCLR0=SEG_D;
    IOSET0=seg_lut[(s/10)%10];
+   IOCLR0=SEG3;
+   delay_ms(5);
    IOSET0=SEG3;
-   delay_ms(5);
 
-   IOCLR0=SEG_D|SEG1|SEG2|SEG3|SEG4;
+   IOCLR0=SEG_D;
    IOSET0=seg_lut[s%10];
-   IOSET0=SEG4;
+   IOCLR0=SEG4;
    delay_ms(5);
+   IOSET0=SEG4;
 }
 }
 
