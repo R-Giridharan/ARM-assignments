@@ -30,27 +30,27 @@ for(i=0;i<50;i++)
 {
    IOCLR0=SEG_D;;
    IOSET0=seg_lut[0];
-   IOSET0=SEG1;
+   IOCLR0=SEG1; 
    delay_ms(5);
-	IOCLR0=SEG1;
-
+   IOSET0=SEG1;
+	
    IOCLR0=SEG_D;;
    IOSET0=seg_lut[1];
-   IOSET0=SEG2;
+   IOCLR0=SEG2;
    delay_ms(5);
-	IOCLR0=SEG2;
+   IOSET0=SEG2;
 
 	 IOCLR0=SEG_D;
    IOSET0=seg_lut[2];
-   IOSET0=SEG3;
+   IOCLR0=SEG3;
    delay_ms(5);
-	IOCLR0=SEG3;
+   IOSET0=SEG3;
 
    IOCLR0=SEG_D;
    IOSET0=seg_lut[3];
-   IOSET0=SEG4;
+   IOCLR0=SEG4;
    delay_ms(5);
-	 IOCLR0=SEG4;
+   IOSET0=SEG4;
 }
 }
 
