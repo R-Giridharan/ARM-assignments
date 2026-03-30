@@ -44,26 +44,26 @@ void floatdisp(U32 n)
 		{
    IOCLR0=SEG_D;;
    IOSET0=seg_lut[n/1000]^dp1;
-   IOSET0=SEG1;
+   IOCLR0=SEG1;
    delay_ms(5);
-	 IOCLR0=SEG1;
+   IOSET0=SEG1;
 
    IOCLR0=SEG_D;;
    IOSET0=seg_lut[(n/100)%10]^dp2;
-   IOSET0=SEG2;
+   IOCLR0=SEG2;
    delay_ms(5);
-	 IOCLR0=SEG2;
+   IOSET0=SEG2;
 
 	 IOCLR0=SEG_D;
    IOSET0=seg_lut[(n/10)%10]^dp3;
-   IOSET0=SEG3;
+   IOCLR0=SEG3;
    delay_ms(5);
-	 IOCLR0=SEG3;
+   IOSET0=SEG3;
 
    IOCLR0=SEG_D;
    IOSET0=seg_lut[n%10]^dp4;
-   IOSET0=SEG4;
+   IOCLR0=SEG4;
    delay_ms(5);
-	 IOCLR0=SEG4;
+   IOSET0=SEG4;
   }
 }
